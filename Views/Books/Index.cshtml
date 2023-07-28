@@ -1,0 +1,34 @@
+@model List<AspnetcoreCRUDApp.Models.Student>
+
+<div class="row">
+   <div class="col-md-12">
+    <a asp-action="Create" asp-asp-controller="Students" class="btn btn-success">Create</a>
+   </div>
+</div>
+<div class="row ">
+    <div class="col-md-12">
+        <table class="table">
+            <thead>
+            <tr>
+                <td>Name</td>
+                <td>Class</td>
+                <td>Roll No</td>
+            </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                   <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Class</td>
+                    <td>@item.RollNo</td>
+                    <td>
+                        <a asp-action="Edit" asp-controller="Books">Edit</a>
+                        <a asp-action="Deleteuser" asp-controller="Books" asp-route-itemid="@item.Id">Delete</a>
+                    </td>
+                   </tr> 
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
